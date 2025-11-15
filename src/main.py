@@ -106,7 +106,7 @@ def ask_model(client: InferenceClient, image_data_url: str) -> str:
     )
 
     # Формат ответа похож на OpenAI Chat API
-    message_content = output.choices[0].message["content"]
+    message_content = output.choices[0].message.content
     if isinstance(message_content, str):
         text = message_content
     elif isinstance(message_content, list):
